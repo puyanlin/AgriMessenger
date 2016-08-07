@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="22"
+    density="xhdpi"
+    format="7"
+    timestamp="122262963925992"
+    token="3489885440789760048" >
+
+    <task
+        name="javac"
+        duration="0" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="0" />
+    <task
+        name="verifier"
+        duration="0" />
+
+    <build timestamp="122215705673169" >
+        <artifact
+            location="/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build timestamp="122262963925992" />
+
+</instant-run>
