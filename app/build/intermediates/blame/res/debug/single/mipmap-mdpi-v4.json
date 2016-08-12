@@ -1,10 +1,18 @@
 [
     {
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
         "merged": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/splash_icon.png",
         "source": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/src/main/res/mipmap-mdpi/splash_icon.png"
     },
     {
         "merged": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png",
         "source": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/splash_icon.png",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/mipmap-mdpi/splash_icon.png"
     }
 ]

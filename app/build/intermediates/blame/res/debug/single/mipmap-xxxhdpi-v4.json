@@ -1,7 +1,19 @@
 [
     {
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/user_identity.png",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/mipmap-xxxhdpi/user_identity.png"
+    },
+    {
         "merged": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/ic_launcher.png",
         "source": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/splash_icon.png",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/mipmap-xxxhdpi/splash_icon.png"
+    },
+    {
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/ic_launcher.png",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/user_data_storage.png",
@@ -12,12 +24,28 @@
         "source": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/src/main/res/mipmap-xxxhdpi/splash_icon.png"
     },
     {
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/user.png",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/mipmap-xxxhdpi/user.png"
+    },
+    {
         "merged": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/user_identity.png",
         "source": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/src/main/res/mipmap-xxxhdpi/user_identity.png"
     },
     {
         "merged": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/user.png",
         "source": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/src/main/res/mipmap-xxxhdpi/user.png"
+    },
+    {
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/push.png",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/mipmap-xxxhdpi/push.png"
+    },
+    {
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/user_data_storage.png",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/mipmap-xxxhdpi/user_data_storage.png"
+    },
+    {
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/icon_home.png",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/mipmap-xxxhdpi/icon_home.png"
     },
     {
         "merged": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/icon_home.png",

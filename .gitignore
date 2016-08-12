@@ -1,0 +1,12 @@
+
+.idea/
+
+*.iml
+
+.idea/vcs.xml
+
+*.jar
+
+*.iml
+
+gradle.properties

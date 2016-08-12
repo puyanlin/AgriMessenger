@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/src/debug/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/puyan/Desktop/AgriMessenger/app/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Users/puyan/Desktop/AgriMessenger/app/src/debug/shaders"/></dataSet></merger>
