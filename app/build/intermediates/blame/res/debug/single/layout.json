@@ -92,6 +92,10 @@
         "source": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/notification_media_cancel_action.xml"
     },
     {
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/content_notification_list.xml",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/layout/content_notification_list.xml"
+    },
+    {
         "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/list_item_text_with_checkbox.xml",
         "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/layout/list_item_text_with_checkbox.xml"
     },
@@ -134,6 +138,10 @@
     {
         "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
         "source": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/exploded-aar/com.android.support/design/24.1.1/res/layout/design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/fragment_notification_list.xml",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/layout/fragment_notification_list.xml"
     },
     {
         "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
@@ -218,6 +226,10 @@
     {
         "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/list_item_icon_text_with_subtitle.xml",
         "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/layout/list_item_icon_text_with_subtitle.xml"
+    },
+    {
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/activity_notification_list.xml",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/layout/activity_notification_list.xml"
     },
     {
         "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml",

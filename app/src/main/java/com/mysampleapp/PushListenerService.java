@@ -13,6 +13,9 @@ import android.util.Log;
 
 import com.google.android.gms.gcm.GcmListenerService;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.List;
 
 import tw.bir.agrimessenger.R;
@@ -39,8 +42,27 @@ public class PushListenerService extends GcmListenerService {
     public static String getMessage(Bundle data) {
         // If a push notification is sent as plain text, then the message appears in "default".
         // Otherwise it's in the "message" for JSON format.
-        return data.containsKey("default") ? data.getString("default") : data.getString(
-            "message", "");
+        String jsonString = data.containsKey("default") ? data.getString("default") : data.getString(
+                "message", "");
+        try {
+            JSONObject json = new JSONObject(jsonString);
+            String msg = json.getString("body");
+            return msg;
+        }catch (JSONException e){}
+        return null;
+    }
+
+    public static  String getTitle(Bundle data) {
+        // If a push notification is sent as plain text, then the message appears in "default".
+        // Otherwise it's in the "message" for JSON format.
+        String jsonString = data.containsKey("default") ? data.getString("default") : data.getString(
+                "message", "");
+        try {
+            JSONObject json = new JSONObject(jsonString);
+            String title = json.getString("title");
+            return title;
+        }catch (JSONException e){}
+        return null;
     }
 
     private static boolean isForeground(Context context) {
@@ -61,7 +83,7 @@ public class PushListenerService extends GcmListenerService {
         return false;
     }
 
-    private void displayNotification(final String message) {
+    private void displayNotification(final String title, final String message) {
         Intent notificationIntent = new Intent(this, MainActivity.class);
         notificationIntent.setFlags(
                 Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -73,7 +95,7 @@ public class PushListenerService extends GcmListenerService {
         // opens the app when the notification is clicked.
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this).setSmallIcon(
                 R.mipmap.push)
-                .setContentTitle(getString(R.string.push_demo_title))
+                .setContentTitle(title == null ? getString(R.string.app_name):title)
                 .setContentText(message)
                 .setDefaults(Notification.DEFAULT_SOUND)
                 .setAutoCancel(true)
@@ -102,6 +124,7 @@ public class PushListenerService extends GcmListenerService {
     @Override
     public void onMessageReceived(final String from, final Bundle data) {
         String message = getMessage(data);
+        String title = getTitle(data);
         Log.d(LOG_TAG, "From: " + from);
         Log.d(LOG_TAG, "Message: " + message);
         // Display a notification in the notification center if the app is in the background.
@@ -110,7 +133,7 @@ public class PushListenerService extends GcmListenerService {
             // broadcast notification
             broadcast(from, data);
         } else {
-            displayNotification(message);
+            displayNotification(title,message);
         }
     }
 }

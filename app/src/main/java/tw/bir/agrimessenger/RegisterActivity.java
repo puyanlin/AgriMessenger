@@ -186,6 +186,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
             @Override
             protected void onPostExecute(final String errorMessage) {
+
                 dialog.dismiss();
             }
         }.execute();

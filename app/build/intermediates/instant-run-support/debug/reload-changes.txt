@@ -1,3 +1,0 @@
-CHANGED,/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class
-CHANGED,/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/tw/bir/agrimessenger/RegisterActivity$2$override.class
-CHANGED,/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/tw/bir/agrimessenger/RegisterActivity$override.class

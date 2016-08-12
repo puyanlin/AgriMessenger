@@ -9,12 +9,16 @@
 package tw.bir.agrimessenger;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 
 import java.util.concurrent.CountDownLatch;
+
+import tw.bir.agrimessenger.service.ServiceConfig;
 
 /**
  * Splash Activity is the start-up activity that appears until a delay is expired
@@ -31,6 +35,9 @@ public class SplashActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
+        boolean activated = preferences.getBoolean(ServiceConfig.KEY_PREF_ACTIVATED_ID,false);
 
         final Thread thread = new Thread(new Runnable() {
             public void run() {

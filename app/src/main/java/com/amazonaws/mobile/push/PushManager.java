@@ -194,6 +194,7 @@ public class PushManager implements GCMTokenHelper.GCMTokenUpdateObserver {
         // Updates the GCM token, which triggers {@link #onGCMTokenUpdate(String,boolean)} to create the platform
         // arn set push enabled, and re-subscribe to any previously subscribed topics.
         gcmTokenHelper.updateGCMToken();
+        //Log.e("Token","gcmTokenHelper.getGCMToken() = " + gcmTokenHelper.getGCMToken());
     }
 
     private void createPlatformArn() {

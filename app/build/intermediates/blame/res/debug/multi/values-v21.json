@@ -1692,12 +1692,12 @@
                 "from": {
                     "file": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/values-v21/styles.xml",
                     "position": {
-                        "startLine": 18,
+                        "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 855,
-                        "endLine": 20,
+                        "startOffset": 856,
+                        "endLine": 21,
                         "endColumn": 12,
-                        "endOffset": 975
+                        "endOffset": 976
                     }
                 }
             },
@@ -1713,12 +1713,12 @@
                 "from": {
                     "file": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/values-v21/styles.xml",
                     "position": {
-                        "startLine": 21,
+                        "startLine": 23,
                         "startColumn": 4,
-                        "startOffset": 980,
-                        "endLine": 23,
+                        "startOffset": 982,
+                        "endLine": 25,
                         "endColumn": 12,
-                        "endOffset": 1131
+                        "endOffset": 1133
                     }
                 }
             },

@@ -16,9 +16,11 @@
         <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
         <item name="android:navigationBarColor">#00000000</item>
     </style>
+
     <style name="FullscreenTheme.VideoPlayer">
         <item name="android:navigationBarColor">#CC000000</item>
     </style>
+
     <style name="FullscreenTheme.VideoWebView" parent="AppTheme.NoActionBar">
         <item name="android:navigationBarColor">#FF000000</item>
     </style>
