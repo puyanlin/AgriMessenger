@@ -4,30 +4,43 @@
     api-level="22"
     density="xhdpi"
     format="7"
-    timestamp="274489479379547"
-    token="3489885440789760048" >
+    timestamp="279067698955978"
+    token="8143711781028311266" >
 
     <task
         name="javac"
-        duration="516" />
+        duration="657" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="227" />
+        duration="29" />
     <task
         name="verifier"
-        duration="45" />
+        duration="1" />
 
     <artifact
-        location="/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
+        location="/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+        type="DEX" />
 
-    <build timestamp="274489479379547" >
+    <build timestamp="276680829053120" >
         <artifact
-            location="/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/outputs/apk/app-debug.apk"
+            location="/Users/puyan/Desktop/AgriMessenger/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
+    </build>
+    <build timestamp="278758220999820" >
+        <artifact
+            location="/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/resources-debug.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
+    </build>
+    <build timestamp="279067698955978" >
+        <artifact
+            location="/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

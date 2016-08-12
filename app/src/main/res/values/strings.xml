@@ -55,5 +55,5 @@
   <string name="push_demo_error_message_update_subscription">Failed to update subscription due to \'%s\'.</string>
   <string name="push_demo_error_message_google_play_services_unavailable">Push Notifications are disabled because Google Play Services are unavailable on the device.</string>
   <string name="push_demo_confirm_message_unsubscribe">Do you want to unsubscribe from \'%s\'.</string>
-    <string name="title_activity_register">RegisterActivity</string>
+  <string name="title_activity_register">請輸入註冊碼</string>
 </resources>

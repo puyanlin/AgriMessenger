@@ -1,34 +1,32 @@
 package tw.bir.agrimessenger;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
+import android.widget.EditText;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.mobile.AWSMobileClient;
+import com.amazonaws.mobile.push.PushManager;
 import com.amazonaws.mobile.user.IdentityManager;
 import com.mysampleapp.PushListenerService;
-import com.mysampleapp.demo.DemoConfiguration;
-import com.mysampleapp.demo.HomeDemoFragment;
 import com.mysampleapp.navigation.NavigationDrawer;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
 
     /** Class name for log messages. */
     private final static String LOG_TAG = RegisterActivity.class.getSimpleName();
@@ -48,10 +46,13 @@ public class RegisterActivity extends AppCompatActivity {
     /** The helper class used to toggle the left navigation drawer open and closed. */
     private ActionBarDrawerToggle drawerToggle;
 
-
+    private PushManager pushManager;
     /**
      * Initializes the Toolbar for use with the activity.
      */
+
+    private EditText etRegisterCode;
+
     private void setupToolbar(final Bundle savedInstanceState) {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         // Set up the activity to use this toolbar. As a side effect this sets the Toolbar's title
@@ -66,6 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
             getSupportActionBar().setTitle(
                     savedInstanceState.getCharSequence(BUNDLE_KEY_TOOLBAR_TITLE));
         }
+
     }
 
     @Override
@@ -87,6 +89,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         setupToolbar(savedInstanceState);
 
+        etRegisterCode = (EditText) findViewById(R.id.etRegister);
+        findViewById(R.id.btnSubmit).setOnClickListener(this);
     }
 
     @Override
@@ -97,6 +101,12 @@ public class RegisterActivity extends AppCompatActivity {
         // register notification receiver
         LocalBroadcastManager.getInstance(this).registerReceiver(notificationReceiver,
                 new IntentFilter(PushListenerService.ACTION_SNS_NOTIFICATION));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_refactor, menu);
+        return true;
     }
 
     @Override
@@ -141,5 +151,43 @@ public class RegisterActivity extends AppCompatActivity {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(notificationReceiver);
     }
 
+    @Override
+    public void onClick(View view) {
+        if(etRegisterCode.getText().length() == 0 ) {
+            etRegisterCode.setError("請輸入註冊碼");
+            return;
+        }
 
+
+        pushManager = AWSMobileClient.defaultMobileClient().getPushManager();
+        final ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setMessage("註冊中...");
+        dialog.show();
+
+        new AsyncTask<Void, Void, String>() {
+            @Override
+            protected String doInBackground(final Void... params) {
+                // register device first to ensure we have a push endpoint.
+                pushManager.registerDevice();
+
+                // if registration succeeded.
+                if (pushManager.isRegistered()) {
+                    try {
+                        pushManager.setPushEnabled(true);
+                        pushManager.subscribeToTopic(pushManager.getDefaultTopic());
+                        return null;
+                    } catch (final AmazonClientException ace) {
+                        Log.e(LOG_TAG, "Failed to change push notification status", ace);
+                        return ace.getMessage();
+                    }
+                }
+                return "Failed to register for push notifications.";
+            }
+
+            @Override
+            protected void onPostExecute(final String errorMessage) {
+                dialog.dismiss();
+            }
+        }.execute();
+    }
 }
