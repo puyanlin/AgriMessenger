@@ -4,7 +4,7 @@
 
   <string name="app_name">莊稼報馬仔</string>
   <string name="google_cloud_messaging_package">tw.bir.agrimessenger</string>
-  
+
   <!-- REQUIRED FOR GENERAL APP FUNCTIONALITY - YOU MAY WANT TO KEEP THESE -->
 
   <string name="main_nav_menu_item_home">Home</string>
@@ -14,7 +14,7 @@
   <string name="title_activity_sign_in">Sign-in</string>
   <string name="button_text_sign_in">SIGN IN</string>
   <string name="button_text_sign_out">SIGN OUT</string>
-  
+
   <!-- USED BY DEMO FEATURES ONLY - YOU CAN DISCARD THESE WITH THE DEMO FOLDER -->
 
   <string name="fragment_demo_instruction_overview_header">Overview</string>
@@ -55,4 +55,5 @@
   <string name="push_demo_error_message_update_subscription">Failed to update subscription due to \'%s\'.</string>
   <string name="push_demo_error_message_google_play_services_unavailable">Push Notifications are disabled because Google Play Services are unavailable on the device.</string>
   <string name="push_demo_confirm_message_unsubscribe">Do you want to unsubscribe from \'%s\'.</string>
+    <string name="title_activity_register">RegisterActivity</string>
 </resources>

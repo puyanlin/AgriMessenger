@@ -4,10 +4,6 @@
         "source": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-ldrtl-mdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17/abc_ic_ab_back_mtrl_am_alpha.png",
-        "source": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/drawable-ldrtl-mdpi/abc_ic_ab_back_mtrl_am_alpha.png"
-    },
-    {
         "merged": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png",
         "source": "/Users/puyan/Desktop/AgriMessenger/MySampleApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-ldrtl-mdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },

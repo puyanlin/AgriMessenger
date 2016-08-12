@@ -19,6 +19,7 @@ import com.amazonaws.mobile.AWSMobileClient;
 import java.util.concurrent.CountDownLatch;
 
 import tw.bir.agrimessenger.R;
+import tw.bir.agrimessenger.RegisterActivity;
 
 /**
  * Splash Activity is the start-up activity that appears until a delay is expired
@@ -88,6 +89,6 @@ public class SplashActivity extends Activity {
      */
     protected void goMain() {
         Log.d(LOG_TAG, "Launching Main Activity...");
-        goAfterSplashTimeout(new Intent(this, MainActivity.class));
+        goAfterSplashTimeout(new Intent(this,RegisterActivity.class));
     }
 }
