@@ -56,6 +56,6 @@
     <string name="push_demo_error_message_google_play_services_unavailable">Push Notifications are disabled because Google Play Services are unavailable on the device.</string>
     <string name="push_demo_confirm_message_unsubscribe">Do you want to unsubscribe from \'%s\'.</string>
     <string name="title_activity_register">請輸入註冊碼</string>
-    <string name="title_activity_notification_list">NotificationListActivity</string>
+    <string name="title_activity_notification_list">報你知</string>
     <string name="action_settings">Settings</string>
 </resources>

@@ -390,7 +390,7 @@
     <string name="title_activity_item_detail">Item Detail</string>
     <string name="title_activity_item_list">Item List</string>
     <string name="title_activity_main">@string/app_name</string>
-    <string name="title_activity_notification_list">NotificationListActivity</string>
+    <string name="title_activity_notification_list">報你知</string>
     <string name="title_activity_register">請輸入註冊碼</string>
     <string name="title_activity_sign_in">Sign-in</string>
     <string name="unknown_user">Guest User</string>

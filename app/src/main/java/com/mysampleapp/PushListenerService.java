@@ -18,6 +18,7 @@ import org.json.JSONObject;
 
 import java.util.List;
 
+import tw.bir.agrimessenger.NotificationListActivity;
 import tw.bir.agrimessenger.R;
 
 /**
@@ -84,7 +85,7 @@ public class PushListenerService extends GcmListenerService {
     }
 
     private void displayNotification(final String title, final String message) {
-        Intent notificationIntent = new Intent(this, MainActivity.class);
+        Intent notificationIntent = new Intent(this, NotificationListActivity.class);
         notificationIntent.setFlags(
                 Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         int requestID = (int) System.currentTimeMillis();
