@@ -4,8 +4,10 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -26,7 +28,10 @@ import com.amazonaws.mobile.user.IdentityManager;
 import com.mysampleapp.PushListenerService;
 import com.mysampleapp.navigation.NavigationDrawer;
 
-public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
+import tw.bir.agrimessenger.service.CallbackInterface.ActivateInterface;
+import tw.bir.agrimessenger.service.ServiceConfig;
+
+public class RegisterActivity extends BIRActivity implements View.OnClickListener{
 
     /** Class name for log messages. */
     private final static String LOG_TAG = RegisterActivity.class.getSimpleName();
@@ -186,8 +191,25 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
             @Override
             protected void onPostExecute(final String errorMessage) {
+                mAPIManager.activate(etRegisterCode.getText().toString(), pushManager.registeredDeviceToken(), new ActivateInterface() {
+                    @Override
+                    public void notifyActivateResult(String activateCode, String msg) {
+                        dialog.dismiss();
+                        if(activateCode == null) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                            builder.setTitle(msg).setMessage("請稍候再試").setNeutralButton("好", null).show();
+                        }else{
+                            SharedPreferences preferences = getApplication().getSharedPreferences("BIR",MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            editor.putBoolean(ServiceConfig.KEY_PREF_ACTIVATED_ID,true);
+                            editor.commit();
 
-                dialog.dismiss();
+                            Intent intent = new Intent(RegisterActivity.this,NotificationListActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                });
             }
         }.execute();
     }

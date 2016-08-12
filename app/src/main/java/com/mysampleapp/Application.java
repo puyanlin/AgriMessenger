@@ -14,12 +14,15 @@ import android.util.Log;
 import com.amazonaws.mobile.AWSMobileClient;
 import com.amazonaws.mobile.push.PushManager;
 
+import tw.bir.agrimessenger.service.APIManager;
+
 /**
  * Application class responsible for initializing singletons and other common components.
  */
 public class Application extends MultiDexApplication {
 
     private final static String LOG_TAG = Application.class.getSimpleName();
+    private APIManager apiManager;
 
     @Override
     public void onCreate() {
@@ -27,6 +30,7 @@ public class Application extends MultiDexApplication {
         super.onCreate();
         initializeApplication();
         Log.d(LOG_TAG, "Application.onCreate - Application initialized OK");
+        apiManager = APIManager.sharedManager(this);
     }
 
     private void initializeApplication() {
@@ -42,5 +46,11 @@ public class Application extends MultiDexApplication {
         });
 
         // ...Put any application-specific initialization logic here...
+    }
+    public APIManager applicationAPIManager(){
+        return apiManager;
+    }
+    public void registered(){
+
     }
 }

@@ -1,15 +1,15 @@
 [
     {
-        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
-        "source": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_popup_menu_item_layout.xml"
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/exploded-aar/com.android.support/design/24.1.1/res/layout/design_navigation_item_separator.xml"
     },
     {
         "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
         "source": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_screen_content_include.xml"
     },
     {
-        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",
-        "source": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/exploded-aar/com.android.support/design/24.1.1/res/layout/design_navigation_item_separator.xml"
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
         "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",

@@ -4,30 +4,32 @@
     api-level="22"
     density="xhdpi"
     format="7"
-    timestamp="284123334781610"
+    timestamp="5831349701402"
     token="8143711781028311266" >
 
     <task
         name="javac"
-        duration="678" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="86" />
+        duration="0" />
     <task
         name="verifier"
-        duration="11" />
+        duration="0" />
 
-    <artifact
-        location="/Users/puyan/Desktop/AgriMessenger/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
-
-    <build timestamp="284123334781610" >
+    <build timestamp="5581153843009" >
         <artifact
             location="/Users/puyan/Desktop/AgriMessenger/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
+    <build timestamp="5797813631165" >
+        <artifact
+            location="/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+            type="DEX" />
+    </build>
+    <build timestamp="5831349701402" />
 
 </instant-run>

@@ -36,9 +36,6 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
-        boolean activated = preferences.getBoolean(ServiceConfig.KEY_PREF_ACTIVATED_ID,false);
-
         final Thread thread = new Thread(new Runnable() {
             public void run() {
                 // Wait for the splash timeout.
@@ -91,6 +88,9 @@ public class SplashActivity extends Activity {
      */
     protected void goMain() {
         Log.d(LOG_TAG, "Launching Main Activity...");
-        goAfterSplashTimeout(new Intent(this,RegisterActivity.class));
+        SharedPreferences preferences = getApplication().getSharedPreferences("BIR",MODE_PRIVATE);
+        boolean activated = preferences.getBoolean(ServiceConfig.KEY_PREF_ACTIVATED_ID,false);
+        Log.e(LOG_TAG, activated ? "activated":"no activated");
+        goAfterSplashTimeout(new Intent(this,activated ? NotificationListActivity.class:RegisterActivity.class));
     }
 }

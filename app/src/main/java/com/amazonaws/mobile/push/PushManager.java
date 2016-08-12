@@ -380,4 +380,8 @@ public class PushManager implements GCMTokenHelper.GCMTokenUpdateObserver {
     public boolean isPushEnabled() {
         return pushEnabled;
     }
+
+    public String registeredDeviceToken(){
+        return gcmTokenHelper.getGCMToken();
+    }
 }
