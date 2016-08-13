@@ -30,8 +30,6 @@ public class NotificationDetailFragment extends Fragment implements View.OnClick
     private AgricultureMessage mMessage;
     private RelativeLayout mShareRelativeLayout;
 
-    private OnFragmentInteractionListener mListener;
-
     public NotificationDetailFragment() {
         // Required empty public constructor
     }
@@ -60,6 +58,7 @@ public class NotificationDetailFragment extends Fragment implements View.OnClick
         view.findViewById(R.id.rlBtnShare).setOnClickListener(this);
         TextView tvContent = (TextView) view.findViewById(R.id.tvNotificationContent);
         tvContent.setText(mMessage.getContent());
+        mShareRelativeLayout = (RelativeLayout) view.findViewById(R.id.rlBtnShare);
 
         mShareRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
