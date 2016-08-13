@@ -6,12 +6,15 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -22,15 +25,7 @@ import java.io.Serializable;
 import tw.bir.agrimessenger.R;
 import tw.bir.agrimessenger.service.AgricultureMessage;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link NotificationDetailFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link NotificationDetailFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class NotificationDetailFragment extends Fragment {
+public class NotificationDetailFragment extends Fragment implements View.OnClickListener {
     private static final String ARG_PARAM = "param1";
     private AgricultureMessage mMessage;
     private RelativeLayout mShareRelativeLayout;
@@ -62,7 +57,9 @@ public class NotificationDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_notification_detail, container, false);
-        mShareRelativeLayout = (RelativeLayout) view.findViewById(R.id.shareRelativeLayout);
+        view.findViewById(R.id.rlBtnShare).setOnClickListener(this);
+        TextView tvContent = (TextView) view.findViewById(R.id.tvNotificationContent);
+        tvContent.setText(mMessage.getContent());
 
         mShareRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,15 +74,14 @@ public class NotificationDetailFragment extends Fragment {
     }
 
     @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
 
 
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+    @Override
+    public void onClick(View view) {
+        Log.e("SHARE","SHARE");
     }
 
     public static Bitmap getScreenShot(View view) {

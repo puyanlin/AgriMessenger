@@ -70,10 +70,11 @@ public class NotificationListActivityFragment extends BIRFragment implements Rec
     public void onClick(View v, int position) {
         Log.e(TAG, "Click list index: " + Integer.toString(position));
         // test entering notification detail
-        NotificationDetailFragment fragment = NotificationDetailFragment.newInstance(listMsg.get(0));
+        NotificationDetailFragment fragment = NotificationDetailFragment.newInstance(listMsg.get(position));
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.addSharedElement(v.findViewById(R.id.llMsgContainer),"msg");
         transaction.replace(R.id.fragment, fragment);
-        transaction.addToBackStack(listMsg.get(0).getId());
+        transaction.addToBackStack(listMsg.get(position).getId());
         transaction.commit();
     }
 }
