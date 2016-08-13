@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.os.Environment;
-import android.os.Parcel;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
@@ -27,7 +26,7 @@ import java.io.Serializable;
 import tw.bir.agrimessenger.R;
 import tw.bir.agrimessenger.service.AgricultureMessage;
 
-public class NotificationDetailFragment extends Fragment implements View.OnClickListener {
+public class NotificationDetailFragment extends Fragment {
     private static final String ARG_PARAM = "param1";
     private AgricultureMessage mMessage;
     private RelativeLayout mShareRelativeLayout;
@@ -58,7 +57,6 @@ public class NotificationDetailFragment extends Fragment implements View.OnClick
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_notification_detail, container, false);
-        view.findViewById(R.id.rlBtnShare).setOnClickListener(this);
         TextView tvContent = (TextView) view.findViewById(R.id.tvNotificationContent);
         tvContent.setText(mMessage.getContent());
         mShareRelativeLayout = (RelativeLayout) view.findViewById(R.id.rlBtnShare);
@@ -67,9 +65,12 @@ public class NotificationDetailFragment extends Fragment implements View.OnClick
         mShareRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bitmap bitmap = getScreenShot(getActivity().getWindow().getDecorView());
-                File file = store(bitmap, "notification_screenshot");
-                shareImage(file);
+
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "["+ mMessage.getCategory() +"] " + mMessage.getSubject() + "\n\n" +mMessage.getContent() + "\n\nby 農業報馬仔 http://agrimessenger.bir-taipei.co/app-debug.apk");
+                startActivity(Intent.createChooser(sharingIntent, "分享給親友"));
+
             }
         });
 
@@ -87,51 +88,4 @@ public class NotificationDetailFragment extends Fragment implements View.OnClick
         super.onActivityCreated(savedInstanceState);
     }
 
-
-    @Override
-    public void onClick(View view) {
-        Log.e("SHARE","SHARE");
-    }
-
-    public static Bitmap getScreenShot(View view) {
-        View screenView = view.getRootView();
-        screenView.setDrawingCacheEnabled(true);
-        Bitmap bitmap = Bitmap.createBitmap(screenView.getDrawingCache());
-        screenView.setDrawingCacheEnabled(false);
-        return bitmap;
-    }
-
-    public static File store(Bitmap bm, String fileName){
-        final String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Screenshots";
-        File dir = new File(dirPath);
-        if(!dir.exists())
-            dir.mkdirs();
-        File file = new File(dirPath, fileName);
-        try {
-            FileOutputStream fOut = new FileOutputStream(file);
-            bm.compress(Bitmap.CompressFormat.PNG, 85, fOut);
-            fOut.flush();
-            fOut.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return file;
-    }
-
-    private void shareImage(File file){
-        Uri uri = Uri.fromFile(file);
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_SEND);
-        intent.setType("image/*");
-
-        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "");
-        intent.putExtra(android.content.Intent.EXTRA_TEXT, "");
-        intent.putExtra(Intent.EXTRA_STREAM, uri);
-        try {
-            startActivity(Intent.createChooser(intent, "Share Screenshot"));
-        } catch (ActivityNotFoundException e) {
-            Toast.makeText(getContext(), "No App Available", Toast.LENGTH_SHORT).show();
-        }
-    }
 }
