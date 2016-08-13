@@ -8,7 +8,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.os.Environment;
+import android.os.Parcel;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -29,6 +31,7 @@ public class NotificationDetailFragment extends Fragment implements View.OnClick
     private static final String ARG_PARAM = "param1";
     private AgricultureMessage mMessage;
     private RelativeLayout mShareRelativeLayout;
+    private RelativeLayout mTypeView;
 
     public NotificationDetailFragment() {
         // Required empty public constructor
@@ -59,15 +62,22 @@ public class NotificationDetailFragment extends Fragment implements View.OnClick
         TextView tvContent = (TextView) view.findViewById(R.id.tvNotificationContent);
         tvContent.setText(mMessage.getContent());
         mShareRelativeLayout = (RelativeLayout) view.findViewById(R.id.rlBtnShare);
+        mTypeView = (RelativeLayout) view.findViewById(R.id.typeView);
 
         mShareRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bitmap bitmap = getScreenShot(getView());
+                Bitmap bitmap = getScreenShot(getActivity().getWindow().getDecorView());
                 File file = store(bitmap, "notification_screenshot");
                 shareImage(file);
             }
         });
+
+        if (mMessage.getCategory().equalsIgnoreCase("氣象")) {
+            mTypeView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.notification_item_color_2));
+        } else {
+            mTypeView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.notification_item_color_1));
+        }
 
         return view;
     }
