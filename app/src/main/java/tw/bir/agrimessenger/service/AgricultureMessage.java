@@ -14,6 +14,7 @@ public class AgricultureMessage implements Serializable{
     private String content;
     private String country;
     private String category;
+    private String subject;
 
     public AgricultureMessage(JSONObject json){
         rawJSON = json;
@@ -24,6 +25,7 @@ public class AgricultureMessage implements Serializable{
             content = json.getString("content");
             country = json.getString("country");
             category = json.optString("category");
+            subject = json.optString("subject");
         }catch (JSONException e){}
     }
 
@@ -44,6 +46,11 @@ public class AgricultureMessage implements Serializable{
     public String getDate() {
         return date;
     }
-
+    public String getCategory() {
+        return category;
+    }
+    public String getSubject() {
+        return subject;
+    }
 
 }
