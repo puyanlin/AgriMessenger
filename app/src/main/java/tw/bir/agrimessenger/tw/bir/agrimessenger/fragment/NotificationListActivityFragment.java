@@ -3,6 +3,7 @@ package tw.bir.agrimessenger.tw.bir.agrimessenger.fragment;
 import android.app.AlertDialog;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,11 @@ public class NotificationListActivityFragment extends BIRFragment {
                     for(int i = 0; i < list.length ; i++){
                         listMsg.add(list[i]);
                     }
+                    // test entering notification detail
+                    NotificationDetailFragment fragment = NotificationDetailFragment.newInstance(listMsg.get(0));
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    transaction.replace(R.id.fragment, fragment);
+                    transaction.commit();
                 }else{
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setTitle(msg).setNeutralButton("好", null).show();

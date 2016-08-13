@@ -40,6 +40,10 @@
         "source": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_activity_chooser_view_list_item.xml"
     },
     {
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/fragment_notification_detail.xml",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/layout/fragment_notification_detail.xml"
+    },
+    {
         "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/fragment_demo_home.xml",
         "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/layout/fragment_demo_home.xml"
     },
@@ -250,6 +254,10 @@
     {
         "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
         "source": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/notification_list_item.xml",
+        "source": "/Users/puyan/Desktop/AgriMessenger/app/src/main/res/layout/notification_list_item.xml"
     },
     {
         "merged": "/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",

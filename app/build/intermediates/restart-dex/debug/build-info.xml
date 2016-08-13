@@ -4,43 +4,38 @@
     api-level="22"
     density="xhdpi"
     format="7"
-    timestamp="26186735993980"
+    timestamp="32468269660804"
     token="8143711781028311266"
-    verifier="COMPATIBLE" >
+    verifier="METHOD_DELETED" >
 
     <task
         name="javac"
-        duration="681" />
+        duration="290" />
     <task
         name="instant-run-dex"
-        duration="549" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="10" />
+        duration="19" />
     <task
         name="verifier"
-        duration="1" />
+        duration="4" />
 
     <artifact
-        location="/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/reload-dex/debug/classes.dex"
-        type="RELOAD_DEX" />
+        location="/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+        type="DEX" />
 
-    <build timestamp="25061885226320" >
+    <build timestamp="32388691544059" >
         <artifact
             location="/Users/puyan/Desktop/AgriMessenger/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="26157989480110" >
-        <artifact
-            location="/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
-            type="DEX" />
-    </build>
     <build
-        timestamp="26186735993980"
-        verifier="COMPATIBLE" >
+        timestamp="32468269660804"
+        verifier="METHOD_DELETED" >
         <artifact
-            location="/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/reload-dex/debug/classes.dex"
-            type="RELOAD_DEX" />
+            location="/Users/puyan/Desktop/AgriMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>
