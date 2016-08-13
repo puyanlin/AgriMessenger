@@ -9,6 +9,7 @@ import android.view.View;
 
 
 public class NotificationListActivity extends BIRActivity{
+    public static String EXTRA_OPEN_ID = "EXTRA_OPEN_ID";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +17,10 @@ public class NotificationListActivity extends BIRActivity{
         setContentView(R.layout.activity_notification_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+    }
+
+    public String getOpenId(){
+        return getIntent().getStringExtra(EXTRA_OPEN_ID);
     }
 
 }

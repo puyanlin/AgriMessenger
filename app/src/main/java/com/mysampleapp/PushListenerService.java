@@ -66,6 +66,19 @@ public class PushListenerService extends GcmListenerService {
         return null;
     }
 
+    public static  String getId(Bundle data) {
+        // If a push notification is sent as plain text, then the message appears in "default".
+        // Otherwise it's in the "message" for JSON format.
+        String jsonString = data.containsKey("default") ? data.getString("default") : data.getString(
+                "message", "");
+        try {
+            JSONObject json = new JSONObject(jsonString);
+            String id = json.getString("id");
+            return id;
+        }catch (JSONException e){}
+        return null;
+    }
+
     private static boolean isForeground(Context context) {
         // Gets a list of running processes.
         ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
@@ -84,7 +97,7 @@ public class PushListenerService extends GcmListenerService {
         return false;
     }
 
-    private void displayNotification(final String title, final String message) {
+    private void displayNotification(final String id,final String title, final String message) {
         Intent notificationIntent = new Intent(this, NotificationListActivity.class);
         notificationIntent.setFlags(
                 Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -126,6 +139,7 @@ public class PushListenerService extends GcmListenerService {
     public void onMessageReceived(final String from, final Bundle data) {
         String message = getMessage(data);
         String title = getTitle(data);
+        String id = getId(data);
         Log.d(LOG_TAG, "From: " + from);
         Log.d(LOG_TAG, "Message: " + message);
         // Display a notification in the notification center if the app is in the background.
@@ -134,7 +148,7 @@ public class PushListenerService extends GcmListenerService {
             // broadcast notification
             broadcast(from, data);
         } else {
-            displayNotification(title,message);
+            displayNotification(id,title,message);
         }
     }
 }

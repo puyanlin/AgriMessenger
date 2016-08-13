@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import tw.bir.agrimessenger.NotificationAdapter;
+import tw.bir.agrimessenger.NotificationListActivity;
 import tw.bir.agrimessenger.R;
 import tw.bir.agrimessenger.RecyclerViewListener;
 import tw.bir.agrimessenger.service.AgricultureMessage;
@@ -51,10 +52,23 @@ public class NotificationListActivityFragment extends BIRFragment implements Rec
             @Override
             public void notifyList(AgricultureMessage[] list, String msg) {
                 if(list!=null&&list.length>0){
-                    for(int i = 0; i < list.length ; i++){
-                        listMsg.add(list[i]);
+                    for(AgricultureMessage m:list){
+                        listMsg.add(m);
                     }
                     mAdapter.swap(listMsg); // update message
+
+                    String openId = ((NotificationListActivity) getActivity()).getOpenId();
+                    for(int i = 0 ; i < listMsg.size(); i++){
+                        AgricultureMessage message = listMsg.get(i);
+                        if(message.getId().equalsIgnoreCase(openId)){
+                            NotificationDetailFragment fragment = NotificationDetailFragment.newInstance(message);
+                            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                            transaction.replace(R.id.fragment, fragment);
+                            transaction.addToBackStack(message.getId());
+                            transaction.commit();
+                        }
+                    }
+
                 }else{
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setTitle(msg).setNeutralButton("好", null).show();
@@ -69,7 +83,6 @@ public class NotificationListActivityFragment extends BIRFragment implements Rec
     @Override
     public void onClick(View v, int position) {
         Log.e(TAG, "Click list index: " + Integer.toString(position));
-        // test entering notification detail
         NotificationDetailFragment fragment = NotificationDetailFragment.newInstance(listMsg.get(position));
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.addSharedElement(v.findViewById(R.id.llMsgContainer),"msg");
