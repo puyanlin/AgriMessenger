@@ -75,8 +75,10 @@ public class NotificationDetailFragment extends Fragment implements View.OnClick
 
         if (mMessage.getCategory().equalsIgnoreCase("氣象")) {
             mTypeView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.notification_item_color_2));
-        } else {
+        } else if (mMessage.getCategory().equalsIgnoreCase("疫情"))  {
             mTypeView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.notification_item_color_1));
+        } else {
+            mTypeView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.notification_item_color_3));
         }
 
         return view;

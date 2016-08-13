@@ -51,8 +51,10 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
         if (agriMsg.getCategory().equalsIgnoreCase("氣象")) {
             holder.typeView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.notification_item_color_2));
-        } else {
+        } else if (agriMsg.getCategory().equalsIgnoreCase("疫情")) {
             holder.typeView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.notification_item_color_1));
+        } else {
+            holder.typeView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.notification_item_color_3));
         }
 
         holder.tvType.setText(agriMsg.getCategory());
