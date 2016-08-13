@@ -64,7 +64,7 @@ public class APIManager {
     }
     public void queryMessages(final MessageListCallback callback){
         Log.e(TAG,"qurey url = " + apiUrl + "messages?fid="+userId);
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, apiUrl + "messages?fid="+userId,new Response.Listener<JSONObject>() {
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, apiUrl + "messages?fid=" + userId,new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {

@@ -20,10 +20,10 @@ public class AgricultureMessage implements Serializable{
         rawJSON = json;
         try {
             id = json.getString("_id");
-            date = json.getString("date");
-            sender = json.getString("sender");
-            content = json.getString("content");
-            country = json.getString("country");
+            date = json.optString("date");
+            sender = json.optString("sender");
+            content = json.optString("content");
+            country = json.optString("country");
             category = json.optString("category");
             subject = json.optString("subject");
         }catch (JSONException e){}
