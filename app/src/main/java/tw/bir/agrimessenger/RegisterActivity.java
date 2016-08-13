@@ -193,15 +193,15 @@ public class RegisterActivity extends BIRActivity implements View.OnClickListene
             protected void onPostExecute(final String errorMessage) {
                 mAPIManager.activate(etRegisterCode.getText().toString(), pushManager.registeredDeviceToken(), new ActivateInterface() {
                     @Override
-                    public void notifyActivateResult(String activateCode, String msg) {
+                    public void notifyActivateResult(String id, String msg) {
                         dialog.dismiss();
-                        if(activateCode == null) {
+                        if(id == null) {
                             AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                             builder.setTitle(msg).setMessage("請稍候再試").setNeutralButton("好", null).show();
                         }else{
                             SharedPreferences preferences = getApplication().getSharedPreferences("BIR",MODE_PRIVATE);
                             SharedPreferences.Editor editor = preferences.edit();
-                            editor.putBoolean(ServiceConfig.KEY_PREF_ACTIVATED_ID,true);
+                            editor.putString(ServiceConfig.KEY_PREF_ACTIVATED_ID,id);
                             editor.commit();
 
                             Intent intent = new Intent(RegisterActivity.this,NotificationListActivity.class);

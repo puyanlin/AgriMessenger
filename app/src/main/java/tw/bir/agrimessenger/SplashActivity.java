@@ -89,8 +89,7 @@ public class SplashActivity extends Activity {
     protected void goMain() {
         Log.d(LOG_TAG, "Launching Main Activity...");
         SharedPreferences preferences = getApplication().getSharedPreferences("BIR",MODE_PRIVATE);
-        boolean activated = preferences.getBoolean(ServiceConfig.KEY_PREF_ACTIVATED_ID,false);
-        Log.e(LOG_TAG, activated ? "activated":"no activated");
-        goAfterSplashTimeout(new Intent(this,activated ? NotificationListActivity.class:RegisterActivity.class));
+        String id = preferences.getString(ServiceConfig.KEY_PREF_ACTIVATED_ID,"");
+        goAfterSplashTimeout(new Intent(this,id.isEmpty() ? RegisterActivity.class:NotificationListActivity.class));
     }
 }

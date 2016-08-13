@@ -19,4 +19,7 @@ public class BIRActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mAPIManager = ((Application) getApplication()).applicationAPIManager();
     }
+    public APIManager apiManager(){
+        return  mAPIManager;
+    }
 }
