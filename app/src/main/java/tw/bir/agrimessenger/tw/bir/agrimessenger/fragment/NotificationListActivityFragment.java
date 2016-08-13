@@ -55,12 +55,6 @@ public class NotificationListActivityFragment extends BIRFragment implements Rec
                         listMsg.add(list[i]);
                     }
                     mAdapter.swap(listMsg); // update message
-
-                    // test entering notification detail
-                    NotificationDetailFragment fragment = NotificationDetailFragment.newInstance(listMsg.get(0));
-                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                    transaction.replace(R.id.fragment, fragment);
-                    transaction.commit();
                 }else{
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setTitle(msg).setNeutralButton("好", null).show();
@@ -75,5 +69,11 @@ public class NotificationListActivityFragment extends BIRFragment implements Rec
     @Override
     public void onClick(View v, int position) {
         Log.e(TAG, "Click list index: " + Integer.toString(position));
+        // test entering notification detail
+        NotificationDetailFragment fragment = NotificationDetailFragment.newInstance(listMsg.get(0));
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment, fragment);
+        transaction.addToBackStack(listMsg.get(0).getId());
+        transaction.commit();
     }
 }

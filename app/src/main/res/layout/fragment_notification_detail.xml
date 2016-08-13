@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="tw.bir.agrimessenger.tw.bir.agrimessenger.fragment.NotificationDetailFragment">
+    tools:context="tw.bir.agrimessenger.tw.bir.agrimessenger.fragment.NotificationDetailFragment"
+    android:background="#ffffff">
 
     <RelativeLayout
         android:layout_width="match_parent"
