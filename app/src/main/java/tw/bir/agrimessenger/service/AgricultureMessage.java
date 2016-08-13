@@ -23,8 +23,10 @@ public class AgricultureMessage implements Serializable{
             date = json.optString("date");
             sender = json.optString("sender");
             content = json.optString("content");
-            country = json.optString("country");
-            category = json.optString("category");
+//            country = json.optString("county");
+//            category = json.optString("category");
+            country = json.optJSONObject("county") == null? "" : json.optJSONObject("county").optString("display_name");
+            category = json.optJSONObject("category") == null? "" : json.optJSONObject("category").optString("display_name");
             subject = json.optString("subject");
         }catch (JSONException e){}
     }

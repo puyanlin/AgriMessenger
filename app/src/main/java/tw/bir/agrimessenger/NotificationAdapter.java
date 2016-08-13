@@ -2,6 +2,7 @@ package tw.bir.agrimessenger;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,8 +47,15 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     @Override
     public void onBindViewHolder(SimpleViewHolder holder, final int position) {
         AgricultureMessage agriMsg = mData.get(position);
-        holder.typeView.setBackgroundColor(Color.GREEN);
-        holder.tvType.setText(agriMsg.getCategory() == null? agriMsg.getCategory() : "");
+        holder.typeView.setBackgroundColor(Color.BLUE);
+
+        if (agriMsg.getCategory().equalsIgnoreCase("氣象")) {
+            holder.typeView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.notification_item_color_2));
+        } else {
+            holder.typeView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.notification_item_color_1));
+        }
+
+        holder.tvType.setText(agriMsg.getCategory());
         holder.tvTitle.setText(agriMsg.getSubject());
         holder.tvSummary.setText(agriMsg.getContent());
 

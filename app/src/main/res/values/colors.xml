@@ -10,4 +10,8 @@
     <color name="nav_drawer_top_background">#CCCCCC</color>
     <color name="nav_drawer_no_user_background">#AAAAAA</color>
     <color name="instructions_list_border_color">#FFDDDDDD</color>
+
+    <color name="notification_item_color_1">#02DF82</color>
+    <color name="notification_item_color_2">#46A3FF</color>
+    <color name="notification_item_color_3">#8080C0</color>
 </resources>
